@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>SIAI-Marchetti SF.260</title>
+  <line>______________________________________________</line>
+  <key>
+    <name>d</name>
+    <desc>Open/Close bay</desc>
+  </key>
+  <key>
+    <name>D</name>
+    <desc>Open/Close engine doors</desc>
+  </key>
+  <key>
+    <name>l</name>
+    <desc>On/Off Landing light</desc>
+  </key>
+    
+</PropertyList>

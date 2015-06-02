@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Systems/views.xml">
+
+    <description>SIAI-Marchetti SF.260 (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+    
+    <fuel-fraction> 0.8 </fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/SIAI-Marchetti-SF.260/sf260-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/SIAI-Marchetti-SF.260/Sounds/sf260-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/SIAI-Marchetti-SF.260/Models/sf260.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <hide-typea>false</hide-typea>
+    </model>
+
+    <instrumentation>
+      <path>Aircraft/SIAI-Marchetti-SF.260/Systems/instruments.xml</path>
+    </instrumentation>
+    
+    <flaps>
+      <setting> 0.0 </setting> <!-- Cruise -->
+      <setting> 0.5 </setting> <!-- Half -->
+      <setting> 1.0 </setting> <!-- Full -->
+    </flaps>
+    
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int   n="0"  type="int">  0 </int>                                         <!-- 0 immat -->
+        <int   n="1"  type="int">  0 </int>                                         <!-- 1 immat -->
+        <int   n="2"  type="int">  0 </int>                                         <!-- 2 immat -->
+        <int   n="3"  type="int">  0 </int>                                         <!-- 3 immat -->
+        <int   n="4"  type="int">  0 </int>                                         <!-- 4 immat -->
+        <int   n="5"  type="int">  0 </int>                                         <!-- 5 immat -->
+        <int   n="6"  alias="/sim/model/hide-typea" type="bool">false</int>         <!-- 6 type of roof -->
+        <int   n="7"  type="int">  0 </int>                                         <!-- 7  -->
+        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">  0 </int>     <!-- 8 nav-lights -->
+        <int   n="9"  alias="/sim/model/lights/beacon/state">  false </int>         <!-- 9 strobe-lights -->
+        <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2"  alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3"  alias="/position/altitude-ft"> 0 </float>                     <!-- altitude for Smoke/Trail -->
+        <float n="4"  alias="/engines/engine[0]/rpm"/>
+        <float n="5"  alias="/engines/engine[0]/cranking"/>
+        <float n="6"  alias="/gear/gear[0]/wow/"/>
+        <float n="7"  alias="/gear/gear[1]/wow/"/>
+        <float n="8"  alias="/gear/gear[2]/wow/"/>
+        <float n="9"  alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="10" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="11" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+    
+    <help include="Systems/help.xml"/>
+    
+    <sf260>
+      <state type="int">0</state>
+      <airspeed-kmh type="float">0.0</airspeed-kmh>
+      <engine-rpm type="float">0.0</engine-rpm>
+      <engine-volume-low-rpm type="float">0.0</engine-volume-low-rpm>
+      <engine-volume-high-rpm type="float">0.0</engine-volume-high-rpm>
+    </sf260>
+
+    <menubar include="Dialogs/sf260-menu.xml"/>
+
+  </sim>
+
+  <input include="Systems/sf260-keyboard.xml"/>
+
+  <systems include="Systems/systems.xml"/>
+
+  <instrumentation include="Systems/instrumentation.xml"/>
+
+  <controls include="Systems/controls.xml"/>
+  
+  <nasal>
+    <doors>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/doors.nas</file>
+    </doors>
+    <sf260>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/liveries.nas</file>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/light.nas</file>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/fuel-pump.nas</file>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/Electrical.nas</file>
+    </sf260>
+    <kns80>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kns80/kns80.nas</file>
+    </kns80>
+    <kap140>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/autopilot/kap140.nas</file>
+      <!-- We can set some variables that might be
+      aircraft specific. We must do it after the file
+      to override the ones that are in the .nas file.
+      gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection";
+      -->
+      <script>
+        <![CDATA[ 
+        staticPressure = "systems/static/pressure-inhg";
+        ]]>
+      </script>
+    </kap140>
+    <kr87>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+  </nasal>
+
+</PropertyList>

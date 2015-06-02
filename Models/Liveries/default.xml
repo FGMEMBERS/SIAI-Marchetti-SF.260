@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">Default</name>
+        <texture>texture.png</texture>
+        <emission>
+          <red>   0.1 </red>
+          <green> 0.1 </green>
+          <blue>  0.1 </blue>
+        </emission>
+      </livery>
+      <hide-typea>false</hide-typea>
+    </model>
+    <multiplay>
+      <generic>
+        <int n="6" type="bool">false</int>
+      </generic>
+    </multiplay>
+    
+  </sim>
+  
+</PropertyList>
