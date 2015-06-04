@@ -31,17 +31,43 @@
   </cruise>
 
   <cockpit x="1.030" y="0.200" z="0.242"/>
-
-  <fuselage ax="3.133" ay="0" az="-0.321" bx="-3.360" by="0" bz="-0.335" width="1.204" taper="0.5" midpoint="0.3"/>
-
+  
+  <!-- Fuselage Noze -->
+  <fuselage ax=" 3.148" ay=" 0.195" az="-0.220" bx=" 3.097" by=" 0.195" bz="-0.220" width="0.476" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 3.148" ay=" 0.000" az="-0.220" bx=" 3.097" by=" 0.000" bz="-0.220" width="0.476" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 3.148" ay="-0.195" az="-0.220" bx=" 3.097" by="-0.195" bz="-0.220" width="0.476" taper="0.8" midpoint="1"/>
+  <!-- Fuelsage left section -->
+  <fuselage ax=" 3.097" ay=" 0.195" az="-0.220" bx=" 2.863" by=" 0.165" bz="-0.303" width="0.631" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 2.863" ay=" 0.165" az="-0.303" bx=" 1.915" by=" 0.064" bz="-0.436" width="0.937" taper="0.7" midpoint="1"/>
+  <fuselage ax=" 1.915" ay=" 0.064" az="-0.436" bx="-0.507" by=" 0.000" bz="-0.348" width="0.996" taper="0.9" midpoint="1"/>
+  <!-- Fuselage right section --> 
+  <fuselage ax=" 3.097" ay="-0.195" az="-0.220" bx=" 2.863" by="-0.165" bz="-0.303" width="0.631" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 2.863" ay="-0.165" az="-0.303" bx=" 1.915" by="-0.064" bz="-0.436" width="0.937" taper="0.7" midpoint="1"/>
+  <fuselage ax=" 1.915" ay="-0.064" az="-0.436" bx="-0.507" by=" 0.000" bz="-0.348" width="0.996" taper="0.9" midpoint="1"/>
+  <!-- Fuselage rear section --> 
+  <fuselage ax="-0.507" ay=" 0.000" az="-0.348" bx="-3.357" by=" 0.000" bz="-0.348" width="0.996" taper="0.2" midpoint="0"/>
+  <!-- Cockpit section --> 
+  <fuselage ax=" 1.852" ay=" 0.000" az="-0.396" bx=" 0.971" by=" 0.000" bz="-0.051" width="1.034" taper="0.8" midpoint="1"/>
+  <fuselage ax=" 1.154" ay=" 0.000" az="-0.091" bx=" 0.427" by=" 0.000" bz="-0.069" width="1.034" taper="0.9" midpoint="0"/>
+  <fuselage ax=" 0.488" ay=" 0.000" az="-0.117" bx="-0.505" by=" 0.000" bz="-0.223" width="1.034" taper="0.7" midpoint="0"/>
+  <!-- Tip tanks --> 
+  <!-- Left -->
+  <fuselage ax=" 1.991" ay=" 3.955" az="-0.407" bx=" 1.619" by=" 3.955" bz="-0.407" width="0.290" taper="0.2" midpoint="1"/>
+  <fuselage ax=" 1.619" ay=" 3.955" az="-0.407" bx=" 1.257" by=" 3.955" bz="-0.407" width="0.320" taper="0.9" midpoint="1"/>
+  <fuselage ax=" 1.257" ay=" 3.955" az="-0.407" bx=" 0.182" by=" 3.955" bz="-0.407" width="0.320" taper="0.1" midpoint="0"/>
+  <!-- Right -->
+  <fuselage ax=" 1.991" ay="-3.955" az="-0.407" bx=" 1.619" by="-3.955" bz="-0.407" width="0.290" taper="0.2" midpoint="1"/>
+  <fuselage ax=" 1.619" ay="-3.955" az="-0.407" bx=" 1.257" by="-3.955" bz="-0.407" width="0.320" taper="0.9" midpoint="1"/>
+  <fuselage ax=" 1.257" ay="-3.955" az="-0.407" bx=" 0.182" by="-3.955" bz="-0.407" width="0.320" taper="0.1" midpoint="0"/>
+  
   <wing x="0.888" y="0" z="-0.764" 
-        chord="1.65" 
+        chord="1.723" 
         length="3.998" 
         taper="0.45"
-        sweep="-3"
+        sweep="-3.5"
         dihedral="5"
         camber="0.005">
-        <stall aoa="22" width="1" peak="1.5"/>
+        <stall aoa="28" width="1" peak="1.5"/>
         <flap0 start="0.00" end="0.63" lift="1.2" drag="1.25"/>
         <flap1 start="0.63" end="0.97" lift="1.2" drag="1.10"/>
 
@@ -63,7 +89,7 @@
          taper="0.6"
          dihedral="2"
          sweep="8">
-         <stall aoa="20" width="1" peak="1.1"/>
+         <stall aoa="24" width="1" peak="1.2"/>
          <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -72,11 +98,11 @@
          <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
   </hstab>
 
-  <vstab x="-2.408" y="0" z="-0.149" 
+  <vstab x="-2.356" y="0" z="-0.149" 
          chord="1.441"
-         length="1.6"
+         length="1.7"
          taper="0.4"
-         sweep="32">
+         sweep="33">
          <stall aoa="18" width="1" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.2" drag="1.1"/>
 
@@ -97,8 +123,8 @@
   -->
   <propeller x="2.7377" y="0" z="-0.2574" 
              mass="438" 
-             radius="1"
-             moment="6"  
+             radius="1.02"
+             moment="2.5"  
              cruise-speed="178" 
              cruise-rpm="2575"
              cruise-alt="6000" 

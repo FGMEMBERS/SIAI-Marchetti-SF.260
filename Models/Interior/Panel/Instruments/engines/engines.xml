@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>engines.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>fond2</object-name>
+    <object-name>face</object-name>
+    <object-name>needlecharge</object-name>
+    <object-name>needlefuelpress</object-name>
+    <object-name>needleoilpress</object-name>
+    <object-name>needleoiltemp</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>fond2</object-name>
+    <object-name>needlecharge</object-name>
+    <object-name>needlefuelpress</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needlecharge</object-name>
+    <property>/systems/electrical/volts</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>  0 </dep></entry> <!--   0 deg C -->
+      <entry><ind> 40 </ind><dep> 65 </dep></entry> <!--  40 deg C -->
+    </interpolation>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m> -0.05207 </y-m>
+      <z-m> -0.01504 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needlefuelpress</object-name>
+    <property>/engines/engine[0]/fuel-pressure-psi</property>
+    <interpolation>
+      <entry><ind>   0.00000 </ind><dep>  0 </dep></entry> <!--   0 mbar -->
+      <entry><ind>   2.17557 </ind><dep> 18 </dep></entry> <!-- 150 mbar -->
+      <entry><ind>   3.62594 </ind><dep> 50 </dep></entry> <!-- 250 mbar -->
+      <entry><ind>   5.07632 </ind><dep> 70 </dep></entry> <!-- 350 mbar -->
+    </interpolation>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m> -0.01736 </y-m>
+      <z-m> -0.01504 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation> 
+    <type>rotate</type>
+    <object-name>needleoilpress</object-name>
+    <property>/engines/engine[0]/oil-pressure-psi</property>
+    <interpolation>
+      <entry><ind>   0.00000 </ind><dep>  0 </dep></entry> <!--  0 bar -->
+      <entry><ind>  29.00754 </ind><dep> 20 </dep></entry> <!--  2 bar -->
+      <entry><ind>  58.01507 </ind><dep> 30 </dep></entry> <!--  4 bar -->
+      <entry><ind>  87.02261 </ind><dep> 40 </dep></entry> <!--  6 bar -->
+      <entry><ind> 116.03014 </ind><dep> 50 </dep></entry> <!--  8 bar -->
+      <entry><ind> 145.03768 </ind><dep> 60 </dep></entry> <!-- 10 bar -->
+    </interpolation>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.01734 </y-m>
+      <z-m> -0.01504 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation> 
+    <type>rotate</type>
+    <object-name>needleoiltemp</object-name>
+    <property>/engines/engine/oil-temperature-degf</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>  0 </dep></entry> <!--   0 deg C -->
+      <entry><ind> 104 </ind><dep> 10 </dep></entry> <!--  40 deg C -->
+      <entry><ind> 140 </ind><dep> 20 </dep></entry> <!--  60 deg C -->
+      <entry><ind> 176 </ind><dep> 35 </dep></entry> <!--  80 deg C-->
+      <entry><ind> 212 </ind><dep> 50 </dep></entry> <!-- 100 deg C -->
+      <entry><ind> 266 </ind><dep> 65 </dep></entry> <!-- 130 deg C -->
+    </interpolation>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.05206 </y-m>
+      <z-m> -0.01504 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

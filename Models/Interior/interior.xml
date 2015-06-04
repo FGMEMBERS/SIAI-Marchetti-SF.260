@@ -30,9 +30,9 @@
   <model>
     <path>Aircraft/SIAI-Marchetti-SF.260/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -1.12 </x-m>
-      <y-m> -0.26 </y-m>
-      <z-m> -0.33 </z-m>
+      <x-m> -0.84512 </x-m>
+      <y-m> -0.25745 </y-m>
+      <z-m> -0.29458 </z-m>
     </offsets>
   </model>
 
