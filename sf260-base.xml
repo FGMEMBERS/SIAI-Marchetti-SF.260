@@ -24,8 +24,13 @@
       <livery>
         <file type="string">default</file>
       </livery>
+      <numbers>
+        <file type="string">70-05</file>
+      </numbers>
       <hide-typea>false</hide-typea>
     </model>
+    
+    <systems include="Systems/subsystems.xml"/>
 
     <instrumentation>
       <path>Aircraft/SIAI-Marchetti-SF.260/Systems/instruments.xml</path>
@@ -64,6 +69,7 @@
         <float n="11" alias="/gear/gear[2]/rollspeed-ms"/>
         <!-- For Bombable -->
         <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="0" type="string" alias="/sim/model/numbers"/>                    <!-- Numbers -->
         <string n="9" type="string" />
       </generic>
     </multiplay>
@@ -90,6 +96,8 @@
 
   <controls include="Systems/controls.xml"/>
   
+  <autopilot include="Systems/autopilot.xml"/>
+  
   <nasal>
     <doors>
       <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/doors.nas</file>
@@ -106,12 +114,15 @@
     <kap140>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/autopilot/kap140.nas</file>
       <!-- We can set some variables that might be
-      aircraft specific. We must do it after the file
-      to override the ones that are in the .nas file.
-      gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection";
+           aircraft specific. We must do it after the file
+           to override the ones that are in the .nas file.
+      
+           gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection";
       -->
       <script>
         <![CDATA[ 
+        headingNeedleDeflection = "/instrumentation/nav/heading-needle-deflection";
+        gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection-norm";
         staticPressure = "systems/static/pressure-inhg";
         ]]>
       </script>

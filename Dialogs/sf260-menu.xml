@@ -54,6 +54,13 @@
         </binding>
       </item>
       <item>
+        <label>Select Numbers</label>
+        <binding>
+          <command>nasal</command>
+          <script>sf260.numbers_dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
         <label>Show/hide roof</label>
         <binding>
           <command>property-toggle</command>
@@ -64,15 +71,6 @@
           <property>sim/multiplay/generic/int[6]</property>
         </binding>
       </item>
-      <!--
-      <item>
-        <label>Immatriculation</label>
-        <binding>
-          <command>nasal</command>
-          <script>navion.immat_dialog.toggle()</script>
-        </binding>
-      </item>
-      -->
     </menu>
   </default>
 

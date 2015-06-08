@@ -6,8 +6,10 @@
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/SIAI-Marchetti-SF.260/Models/Liveries", 10);
-
+      var update = aircraft.overlay_update.new();
+      update.add("Aircraft/SIAI-Marchetti-SF.260/Models/Liveries", "sim/model/livery/file");
+      update.add("Aircraft/SIAI-Marchetti-SF.260/Models/Numbers", "sim/multiplay/generic/string");
+      
       var self = cmdarg();
 
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
@@ -21,7 +23,7 @@
     </load>
 
     <unload>
-      livery_update.stop();
+      update.stop();
       crew_door.unalias();
       passenger_door.unalias();
     </unload>
@@ -175,6 +177,11 @@
     </offsets>
   </model>
 
+  <!-- Numbers -->
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Numbers/numbers.xml</path>
+  </model>
+  
   <!-- Interieur -->
   <model>
     <path>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/interior.xml</path>
@@ -868,7 +875,7 @@
     </offsets>
   </model>
 
-  <!-- Gear light cone -->
+  <!-- Noze light cone -->
   <model>
     <path>Aircraft/SIAI-Marchetti-SF.260/Models/light/light-cone.xml</path>
     <offsets>
