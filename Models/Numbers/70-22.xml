@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <numbers>
+        <name type="string">70-22</name>
+        <texture>70-22.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </numbers>
+    </model>
+  </sim>
+
+</PropertyList>

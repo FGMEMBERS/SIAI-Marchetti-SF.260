@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>numbers.ac</path>
+  
+  <animation>
+    <object-name>numbers</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>numbers</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>numbers</object-name>
+    
+    <property-base>sim/model/numbers</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>no-numbers.png</texture>
+    <specular>
+      <red-prop>emission/red</red-prop>
+      <green-prop>emission/green</green-prop>
+      <blue-prop>emission/blue</blue-prop>
+    </specular>
+  </animation>
+  
+</PropertyList>
