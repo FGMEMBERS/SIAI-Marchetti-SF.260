@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+  <path>smokes.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>texte</object-name>
+    <object-name>on-off-left</object-name>
+    <object-name>leftred</object-name>
+    <object-name>leftwhite</object-name>
+    <object-name>leftgreen</object-name>
+    <object-name>on-off-rear</object-name>
+    <object-name>rearred</object-name>
+    <object-name>rearwhite</object-name>
+    <object-name>reargreen</object-name>
+    <object-name>on-off-right</object-name>
+    <object-name>rightred</object-name>
+    <object-name>rightwhite</object-name>
+    <object-name>rightgreen</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>on-off-left</object-name>
+    <object-name>on-off-rear</object-name>
+    <object-name>on-off-right</object-name>
+    <object-name>texte</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>leftred</object-name>
+    <object-name>rearred</object-name>
+    <object-name>rightred</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   2.00 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>leftwhite</object-name>
+    <object-name>rearwhite</object-name>
+    <object-name>rightwhite</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>leftgreen</object-name>
+    <object-name>reargreen</object-name>
+    <object-name>rightgreen</object-name>
+    <condition>
+      <property>/controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.25 </red>
+      <green> 2.00 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <!-- Left -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>on-off-left</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/multiplay/generic/int[14]</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>on-off-left</object-name>
+    <property>sim/multiplay/generic/int[14]</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m>  0.00123 </x-m>
+      <y-m> -0.04322 </y-m>
+      <z-m>  0.00169 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>leftred</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[11]";
+          setprop(p, 1);
+        </script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>leftred</object-name>
+    <property>sim/multiplay/generic/int[11]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>leftwhite</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[11]";
+          setprop(p, 2);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>leftwhite</object-name>
+    <property>sim/multiplay/generic/int[11]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>leftgreen</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[11]";
+          setprop(p, 3);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>leftgreen</object-name>
+    <property>sim/multiplay/generic/int[11]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep> -0.003 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Center -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>on-off-rear</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/multiplay/generic/int[15]</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>on-off-rear</object-name>
+    <property>sim/multiplay/generic/int[15]</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m>  0.00123 </x-m>
+      <y-m> -0.00942 </y-m>
+      <z-m>  0.00169 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>rearred</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[12]";
+          setprop(p, 1);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>rearred</object-name>
+    <property>sim/multiplay/generic/int[12]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>rearwhite</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[12]";
+          setprop(p, 2);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>rearwhite</object-name>
+    <property>sim/multiplay/generic/int[12]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>reargreen</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[12]";
+          setprop(p, 3);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>reargreen</object-name>
+    <property>sim/multiplay/generic/int[12]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep> -0.003 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <!-- Right -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>on-off-right</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/multiplay/generic/int[16]</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>on-off-right</object-name>
+    <property>sim/multiplay/generic/int[16]</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m> 0.00123 </x-m>
+      <y-m> 0.02438 </y-m>
+      <z-m> 0.00169 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>rightred</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[13]";
+          setprop(p, 1);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>rightred</object-name>
+    <property>sim/multiplay/generic/int[13]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>rightwhite</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[13]";
+          setprop(p, 2);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>rightwhite</object-name>
+    <property>sim/multiplay/generic/int[13]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep> -0.003 </dep></entry>
+      <entry><ind> 3 </ind><dep>  0.000 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>rightgreen</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/multiplay/generic/int[13]";
+          setprop(p, 3);
+        </script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>rightgreen</object-name>
+    <property>sim/multiplay/generic/int[13]</property>
+    <interpolation>
+      <entry><ind> 1 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 2 </ind><dep>  0.000 </dep></entry>
+      <entry><ind> 3 </ind><dep> -0.003 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+</PropertyList>

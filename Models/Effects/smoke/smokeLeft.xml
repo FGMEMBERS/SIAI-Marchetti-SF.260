@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+  
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/Red.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/activeL -->
+        <property>sim/multiplay/generic/int[14]</property>
+        <equals>
+          <!-- /smoke/colors/knob-left -->
+          <property>sim/multiplay/generic/int[11]</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/White.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/activeL -->
+        <property>sim/multiplay/generic/int[14]</property>
+        <equals>
+          <!-- /smoke/colors/knob-left -->
+          <property>sim/multiplay/generic/int[11]</property>
+          <value>2</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/Green.xml</path>
+    <condition>
+      <and>
+        <!-- /smoke/activeL -->
+        <property>sim/multiplay/generic/int[14]</property>
+        <equals>
+          <!-- /smoke/colors/knob-left -->
+          <property>sim/multiplay/generic/int[11]</property>
+          <value>3</value>
+        </equals>
+      </and>
+    </condition>
+  </model>
+  
+</PropertyList>
