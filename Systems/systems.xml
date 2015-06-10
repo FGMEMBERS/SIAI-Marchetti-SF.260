@@ -9,4 +9,15 @@
     </outputs>
   </electrical>
   
+  <smoke>
+    <activeL type="bool">false</activeL>
+    <activeC type="bool">false</activeC>
+    <activeR type="bool">false</activeR>
+    <colors>
+      <knob-left type="int">1</knob-left>
+      <knob-center type="int">2</knob-center>
+      <knob-right type="int">3</knob-right>
+    </colors>
+  </smoke>
+  
 </PropertyList>

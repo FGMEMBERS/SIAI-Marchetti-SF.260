@@ -307,4 +307,14 @@
     </offsets>
   </model>
   
+  <!-- SMOKES -->
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/Smokes/smokes.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.108 </y-m>
+      <z-m>  0.071 </z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>

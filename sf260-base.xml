@@ -36,25 +36,25 @@
       <path>Aircraft/SIAI-Marchetti-SF.260/Systems/instruments.xml</path>
     </instrumentation>
     
-    <flaps>
-      <setting> 0.0 </setting> <!-- Cruise -->
-      <setting> 0.5 </setting> <!-- Half -->
-      <setting> 1.0 </setting> <!-- Full -->
-    </flaps>
-    
     <multiplay>
       <chat_display>1</chat_display>
       <generic> 
-        <int   n="0"  type="int">  0 </int>                                         <!-- 0 immat -->
-        <int   n="1"  type="int">  0 </int>                                         <!-- 1 immat -->
-        <int   n="2"  type="int">  0 </int>                                         <!-- 2 immat -->
-        <int   n="3"  type="int">  0 </int>                                         <!-- 3 immat -->
-        <int   n="4"  type="int">  0 </int>                                         <!-- 4 immat -->
-        <int   n="5"  type="int">  0 </int>                                         <!-- 5 immat -->
-        <int   n="6"  alias="/sim/model/hide-typea" type="bool">false</int>         <!-- 6 type of roof -->
-        <int   n="7"  type="int">  0 </int>                                         <!-- 7  -->
-        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">  0 </int>     <!-- 8 nav-lights -->
-        <int   n="9"  alias="/sim/model/lights/beacon/state">  false </int>         <!-- 9 strobe-lights -->
+        <int   n="0"  type="int">  0 </int>                                         <!--  0 immat -->
+        <int   n="1"  type="int">  0 </int>                                         <!--  1 immat -->
+        <int   n="2"  type="int">  0 </int>                                         <!--  2 immat -->
+        <int   n="3"  type="int">  0 </int>                                         <!--  3 immat -->
+        <int   n="4"  type="int">  0 </int>                                         <!--  4 immat -->
+        <int   n="5"  type="int">  0 </int>                                         <!--  5 immat -->
+        <int   n="6"  type="bool" alias="/sim/model/hide-typea">false</int>         <!--  6 type of roof -->
+        <int   n="7"  type="int"  alias="smoke/particlepersec">50</int>             <!--  7 particlepersec -->
+        <int   n="8"  alias="/systems/electrical/outputs/nav-lights">0</int>        <!--  8 nav-lights -->
+        <int   n="9"  alias="/sim/model/lights/beacon/state">false</int>            <!--  9 strobe-lights -->
+        <int   n="11" type="int"  alias="/smoke/colors/knob-left">1</int>           <!-- 10 smoke mixer green setting -->
+        <int   n="12" type="int"  alias="/smoke/colors/knob-center">2</int>         <!-- 11 smoke mixer White setting -->
+        <int   n="13" type="int"  alias="/smoke/colors/knob-right">3</int>          <!-- 12 smoke mixer red setting -->
+        <int   n="14" type="bool" alias="/smoke/activeL">false</int>                <!-- 13 start smoke Left -->
+        <int   n="15" type="bool" alias="/smoke/activeC">false</int>                <!-- 13 start smoke Center -->
+        <int   n="16" type="bool" alias="/smoke/activeR">false</int>                <!-- 13 start smoke Right -->
         <float n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
         <float n="2"  alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
@@ -74,14 +74,20 @@
       </generic>
     </multiplay>
     
+    <flaps>
+      <setting> 0.0 </setting> <!-- Cruise -->
+      <setting> 0.5 </setting> <!-- Half -->
+      <setting> 1.0 </setting> <!-- Full -->
+    </flaps>
+    
     <help include="Systems/help.xml"/>
     
     <sf260>
       <state type="int">0</state>
-      <airspeed-kmh type="float">0.0</airspeed-kmh>
-      <engine-rpm type="float">0.0</engine-rpm>
-      <engine-volume-low-rpm type="float">0.0</engine-volume-low-rpm>
-      <engine-volume-high-rpm type="float">0.0</engine-volume-high-rpm>
+      <airspeed-kmh type="float">0</airspeed-kmh>
+      <engine-rpm type="float">0</engine-rpm>
+      <engine-volume-low-rpm type="float">0</engine-volume-low-rpm>
+      <engine-volume-high-rpm type="float">0</engine-volume-high-rpm>
     </sf260>
 
     <menubar include="Dialogs/sf260-menu.xml"/>
@@ -107,6 +113,7 @@
       <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/light.nas</file>
       <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/fuel-pump.nas</file>
       <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/Electrical.nas</file>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Nasal/Systems.nas</file>
     </sf260>
     <kns80>
       <file>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kns80/kns80.nas</file>

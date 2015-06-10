@@ -187,6 +187,34 @@
     <path>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/interior.xml</path>
   </model>
  
+  <!-- Colors smoke -->
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/smokeLeft.xml</path>
+    <offsets>
+      <x-m> -0.18672 </x-m>
+      <y-m> -3.95697 </y-m>
+      <z-m> -0.40800 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/smokeCenter.xml</path>
+    <offsets>
+      <x-m>  2.60535 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.55861 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Effects/smoke/smokeRight.xml</path>
+    <offsets>
+      <x-m> -0.18672 </x-m>
+      <y-m>  3.95697 </y-m>
+      <z-m> -0.40800 </z-m>
+    </offsets>
+  </model>
+  
   <!-- Cranking effects -->
   <!-- Left -->
   <model>
