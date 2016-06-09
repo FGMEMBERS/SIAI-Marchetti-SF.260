@@ -2,13 +2,8 @@
 
 <PropertyList>
 
-  <sim include="Systems/views.xml">
+  <sim include="views.xml">
 
-    <description>SIAI-Marchetti SF.260 (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM)</author>
-    <aircraft-version>0.1</aircraft-version>
-    <status>Alpha</status>
-    
     <fuel-fraction> 0.8 </fuel-fraction>
 
     <startup>
@@ -29,12 +24,6 @@
       </numbers>
       <hide-typea>false</hide-typea>
     </model>
-    
-    <systems include="Systems/subsystems.xml"/>
-
-    <instrumentation>
-      <path>Aircraft/SIAI-Marchetti-SF.260/Systems/instruments.xml</path>
-    </instrumentation>
     
     <multiplay>
       <chat_display>1</chat_display>
@@ -74,35 +63,25 @@
       </generic>
     </multiplay>
     
-    <flaps>
-      <setting> 0.0 </setting> <!-- Cruise -->
-      <setting> 0.5 </setting> <!-- Half -->
-      <setting> 1.0 </setting> <!-- Full -->
-    </flaps>
+    <flaps include="flaps.xml"/>
     
-    <help include="Systems/help.xml"/>
+    <help include="help.xml"/>
     
-    <sf260>
-      <state type="int">0</state>
-      <airspeed-kmh type="float">0</airspeed-kmh>
-      <engine-rpm type="float">0</engine-rpm>
-      <engine-volume-low-rpm type="float">0</engine-volume-low-rpm>
-      <engine-volume-high-rpm type="float">0</engine-volume-high-rpm>
-    </sf260>
+    <sf260 include="sf260.xml"/>
 
-    <menubar include="Dialogs/sf260-menu.xml"/>
+    <menubar include="../Dialogs/sf260-menu.xml"/>
 
   </sim>
 
-  <input include="Systems/sf260-keyboard.xml"/>
+  <input include="sf260-keyboard.xml"/>
 
-  <systems include="Systems/systems.xml"/>
+  <systems include="systems.xml"/>
 
-  <instrumentation include="Systems/instrumentation.xml"/>
+  <instrumentation include="instrumentation.xml"/>
 
-  <controls include="Systems/controls.xml"/>
+  <controls include="controls.xml"/>
   
-  <autopilot include="Systems/autopilot.xml"/>
+  <autopilot include="autopilot.xml"/>
   
   <nasal>
     <doors>
@@ -119,7 +98,7 @@
       <file>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kns80/kns80.nas</file>
     </kns80>
     <kap140>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/autopilot/kap140.nas</file>
+      <file>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kap140/autopilot/kap140.nas</file>
       <!-- We can set some variables that might be
            aircraft specific. We must do it after the file
            to override the ones that are in the .nas file.

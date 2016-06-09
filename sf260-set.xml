@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="sf260-base.xml">
+<PropertyList include="Systems/sf260-base.xml">
   <sim>
 
     <description>SIAI-Marchetti SF.260 (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+    
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
     
     <flight-model archive="y">yasim</flight-model>
-    <aero archive="y">sf260-yasim</aero>
+    <aero archive="y">Systems/sf260-yasim</aero>
     
     <rating>
       <FDM type="int">     2 </FDM>

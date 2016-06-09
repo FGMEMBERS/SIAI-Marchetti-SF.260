@@ -9,6 +9,21 @@
     </outputs>
   </electrical>
   
+  <autopilot>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kap140/autopilot/KAP140.xml</path>
+  </autopilot>
+  
+  <property-rule n="100">
+    <name>FiltersOnly</name>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Models/Interior/Panel/Instruments/kap140/autopilot/NAVandGSfilters.xml</path>
+  </property-rule>
+  
+  <electrical>
+    <!-- null electrical system path here so we can use a nasal based -->
+    <!-- model defined later in the nasal section of this file. -->
+    <path></path>
+  </electrical>
+  
   <smoke>
     <activeL type="bool">false</activeL>
     <activeC type="bool">false</activeC>

@@ -4,6 +4,11 @@
 
   <path>sf260.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/SIAI-Marchetti-SF.260/Sounds/mp-sound.xml</path>
+  </sound>
+  
   <nasal>
     <load>
       var update = aircraft.overlay_update.new();
